@@ -7,6 +7,12 @@ import layoutSyles from './layout.module.scss'
 
 const Layout = (props) => {
     return (
+        <div style={{
+            backgroundColor: 'var(--bg)',
+            color: 'var(--textNormal)',
+            transition: 'color 0.2s ease-out, background 0.2s ease-out',
+          }}>
+
         <div className={layoutSyles.container}>
             <div className={layoutSyles.content}>
                 <Header />
@@ -14,6 +20,7 @@ const Layout = (props) => {
             </div>
             <Footer />
         </div>
+          </div>
     )
 }
 

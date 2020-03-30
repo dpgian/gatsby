@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
+import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 
 import headerStyles from './header.module.scss'
 
@@ -17,11 +18,29 @@ const Header = () => {
     return (
         <>
             <header className={headerStyles.header}>
-                <h1>
-                    <Link className={headerStyles.title} to='/'>
-                        {data.site.siteMetadata.title}
-                    </Link>
-                </h1>
+                <div className={headerStyles.head}>
+                    <h1>
+                        <Link className={headerStyles.title} to='/'>
+                            {data.site.siteMetadata.title}
+                        </Link>
+                    </h1>
+                    <ThemeToggler>
+                        {({ theme, toggleTheme }) => (
+                            <div className={headerStyles.themeSwitchWrapper}>
+                            <label className={headerStyles.tog}>
+                                <input 
+                                    type='checkbox'
+                                    onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+                                    checked={theme === 'dark'}
+                                    /> 
+                                    <div className={headerStyles.slider} />
+                            </label>
+                            </div>
+                        )}
+                    </ThemeToggler>
+                </div>
+
+
                 <nav>
                     <ul className={headerStyles.navList}>
                         <li>
