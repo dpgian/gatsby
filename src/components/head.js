@@ -12,9 +12,11 @@ const Head = (props) => {
             }
         }
     `)
+    
+    let title = props.title==='Home' ? '' : props.title + ' | '
 
     return (
-        <Helmet title={`${props.title} | ${data.site.siteMetadata.title}`}/>
+        <Helmet title={`${title} ${data.site.siteMetadata.title}`}/>
     )
 }
 

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'A Blog',
-    author: 'Gian De Palma'
+    title: 'De Palma',
+    author: 'Gianpierangelo De Palma'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -10,11 +10,17 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'src',
-        path: `${__dirname}/src/`
+        name: 'blog',
+        path: `${__dirname}/src/posts`
       }
     },
-
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'project',
+        path: `${__dirname}/src/projects`
+      }
+    },
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-transformer-remark',

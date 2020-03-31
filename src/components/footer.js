@@ -16,7 +16,10 @@ const Footer = () => {
 
     return (
         <footer className={footerStyles.footer}>
-            <p>Blog Footer. Created by {data.site.siteMetadata.author}</p>
+            <a href='https://github.com/dpgian' target='__blank'>Github </a> 
+            • 
+            <a href='https://www.linkedin.com/in/gian-de-palma-17932b14a/' target='__blank'> LinkedIn </a>  
+            <p>Created by {data.site.siteMetadata.author}</p>
         </footer>
     )
 }

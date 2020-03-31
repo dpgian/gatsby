@@ -16,23 +16,23 @@ html {
     --hr: hsla(0, 0%, 0%, 0.2);
     --inlineCode-bg: rgba(255, 229, 100, 0.2);
     --inlineCode-text: #1a1a1a;
-    --hover: #89b2ae;
+    --hover: #234257;
     --nav-item: #5b818e;
-    --active-nav-item: #234257;
+    --active-nav-item: #89b2ae;
   }
   body.dark {
     -webkit-font-smoothing: antialiased;
   
-    --bg: #040405;
+    --bg: #282c35; //#040405;
     --header: #fff;
     --textNormal: rgba(255, 255, 255, 0.88);
     --textTitle: #fff;
     --hr: hsla(0, 0%, 100%, 0.2);
     --inlineCode-bg: rgba(67, 97, 149, 0.5);
     --inlineCode-text: #e6e6e6;
-    --hover: #cff5fe;
-    --nav-item: #02778B; 
-    --active-nav-item: 	#14484f;
+    --hover: #A5C4CB;
+    --nav-item: #DBE7EA; 
+    --active-nav-item: #DDF8FE;
 
     a {
       color: #BADCE4

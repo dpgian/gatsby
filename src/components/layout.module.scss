@@ -1,11 +1,17 @@
 .container {
     margin: 0 auto;
-    max-width: 750px;
+    max-width: 65vw; //750px
     padding: 1rem;
     
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
+    @media (max-width: 599px) {
+        min-width: 100vw;
+        margin: 0 auto;
+        padding: 1rem;
+    }
 }
 
 .content {

@@ -1,3 +1,21 @@
 .footer {
     margin-top: 3rem;
+    display: flex;
+    margin-bottom: 1rem;
+    //justify-content: space-between;
+
+    a {
+        font-size: .9rem; 
+        margin: 0 .4rem;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+        color: var(--hover);
+    }
+
+    p {
+        font-size: .5rem;
+        margin: auto 0 auto auto;
+    }
 }

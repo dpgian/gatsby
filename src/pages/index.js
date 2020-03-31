@@ -8,9 +8,14 @@ const App = () => {
     return (
         <Layout>
             <Head title='Home'/>
-            <h1>Hello.</h1>
-            <h2>I'm Gian, a full-stack developer. Welcome to my blog.</h2>
-            <Link to='/contact'>Need a developer?</Link>
+            <h2>Simple and Clean —</h2>
+            <h3>It's me. You know. Gian.</h3>
+            <br />
+            <h4>Welcome to my website!</h4>
+            
+            <h5>
+                <Link to='/contact'>Need a developer?</Link>
+            </h5>
         </Layout>
     )
 }

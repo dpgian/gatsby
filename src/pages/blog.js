@@ -6,9 +6,15 @@ import blogStyles from './blog.module.scss'
 import Head from '../components/head'
 
 const BlogPage = () => {
-    const data = useStaticQuery(graphql`
-      query {
-        allMarkdownRemark {
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark (
+        filter:{
+          fields: {
+            collection: {eq: "blog"}
+          }
+        }
+      ) {
           edges {
             node {
               frontmatter {
@@ -20,11 +26,12 @@ const BlogPage = () => {
               fields {
                 slug
               }
-            }
+            }                
           }
-        }
       }
-    `)
+    }
+  `)
+    
 
     return (
         <Layout> 
@@ -35,7 +42,7 @@ const BlogPage = () => {
                     data.allMarkdownRemark.edges.map(edge => {
                         return (
                             <li className={blogStyles.post} key={edge.node.frontmatter.title}>
-                              <Link to={`/blog/${edge.node.fields.slug}`}>
+                              <Link to={`${edge.node.fields.slug}`}>
                                 <h2>{edge.node.frontmatter.title}</h2>
                                 <p>{edge.node.frontmatter.date}</p>
                               </Link>
