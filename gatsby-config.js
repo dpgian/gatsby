@@ -2,6 +2,8 @@ require('dotenv').config(
   {path: `.env.${process.env.NODE_ENV}`}
 )
 
+console.log(`##########################################################  ${process.env} ########## ${process.env.NODE_ENV}`)
+
 module.exports = {
   siteMetadata: {
     title: 'De Palma',
@@ -14,8 +16,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+        spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
+        accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN
       }
     },
     'gatsby-plugin-sharp',
