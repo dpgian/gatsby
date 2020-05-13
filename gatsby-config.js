@@ -1,3 +1,7 @@
+require('dotenv').config(
+  {path: `.env.${process.env.NODE_ENV}`}
+)
+
 module.exports = {
   siteMetadata: {
     title: 'De Palma',
@@ -7,13 +11,6 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-dark-mode',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'blog',
-        path: `${__dirname}/src/posts`
-      }
-    },
     {
       resolve: 'gatsby-source-contentful',
       options: {

@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
+    "dotenv": "^8.2.0",
     "gatsby": "^2.19.45",
     "gatsby-plugin-dark-mode": "^1.1.1",
     "gatsby-plugin-react-helmet": "^3.2.1",
