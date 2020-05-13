@@ -8,29 +8,17 @@ import Head from '../components/head'
 const Work = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark (
-        filter:{
-          fields: {
-            collection: {eq: "project"}
+      allContentfulProject {
+        edges {
+          node {
+            slug
+            title
+            tech
+            github
+            web
+            description
           }
         }
-      ) {
-          edges {
-            node {
-              frontmatter {
-                title
-                tech
-                description
-                github
-                web
-              }
-              html
-              excerpt
-              fields {
-                slug
-              }
-            }                
-          }
       }
     }
   `)
@@ -44,19 +32,19 @@ const Work = () => {
             <p>Here a selection of my works. You can check out more code at my <a href='https://github.com/dpgian' target='__blank'>GitHub</a></p>
             <div className={workStyles.works}>
                 {
-                    data.allMarkdownRemark.edges.map(edge => {
+                    data.allContentfulProject.edges.map(edge => {
                         return (
-                          <div className={workStyles.work} key={edge.node.frontmatter.title}>
+                          <div className={workStyles.work} key={edge.node.title}>
 
                               {/* <img alt='image' className={workStyles.pic} src='' /> */}
                             
-                            <p className={workStyles.title}>{edge.node.frontmatter.title}</p>
-                            <p className={workStyles.subtitle}>{edge.node.frontmatter.tech}</p>
-                            <p>{edge.node.frontmatter.description}</p>
+                            <p className={workStyles.title}>{edge.node.title}</p>
+                            <p className={workStyles.subtitle}>{edge.node.tech}</p>
+                            <p>{edge.node.description}</p>
                             <div className={workStyles.links}>
-                              <Link to={edge.node.fields.slug}>Learn more</Link>
-                              {edge.node.frontmatter.web === '' ? <></> : <a href={edge.node.frontmatter.web} target='__blank'>Web</a>}
-                              <a href={edge.node.frontmatter.github} target='__blank'>Code</a>
+                              <Link to={`work/${edge.node.slug}`}>Learn more</Link>
+                              {edge.node.web === '' ? <></> : <a href={edge.node.web} target='__blank'>Web</a>}
+                              <a href={edge.node.github} target='__blank'>Code</a>
                             </div>
                           </div>
                         )
